@@ -1,7 +1,9 @@
 const addBtn = document.getElementById("add");
 
+// Converting JSON string to object
 const notes = JSON.parse(localStorage.getItem("notes"));
 
+// Check if there are previously saved notes and add if present
 if (notes) {
     notes.forEach((note) => {
         addNewNote(note);
@@ -12,6 +14,7 @@ addBtn.addEventListener("click", () => {
     addNewNote();
 });
 
+// Adding New Note
 function addNewNote(text = "") {
     const note = document.createElement("div");
     note.classList.add("note");
@@ -34,7 +37,7 @@ function addNewNote(text = "") {
     const textArea = note.querySelector("textarea");
 
     textArea.value = text;
-    main.innerHTML = marked(text);
+    main.innerHTML = marked(text);  // parsing to markdown
 
     editBtn.addEventListener("click", () => {
         main.classList.toggle("hidden");
@@ -50,7 +53,7 @@ function addNewNote(text = "") {
     textArea.addEventListener("input", (e) => {
         const { value } = e.target;
 
-        main.innerHTML = marked(value);
+        main.innerHTML = marked(value);  
 
         updateLS();
     });
@@ -58,6 +61,7 @@ function addNewNote(text = "") {
     document.body.appendChild(note);
 }
 
+// Updating Local Storage
 function updateLS() {
     const notesText = document.querySelectorAll("textarea");
 
@@ -67,5 +71,5 @@ function updateLS() {
         notes.push(note.value);
     });
 
-    localStorage.setItem("notes", JSON.stringify(notes));
+    localStorage.setItem("notes", JSON.stringify(notes));  
 }
