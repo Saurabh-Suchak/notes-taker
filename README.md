@@ -1,6 +1,7 @@
-# notes-taker
+## notes-taker
+<br>
 
-### Description and Features
+## Description and Features
 
 <!-- You can create multiple notes with the help of this project. 
 It is made using Javascript and has a clean and simple UI. -->
@@ -11,8 +12,14 @@ The user has **3 options** , he can either:<br>
 3. Delete the notes.
 
 The most **useful feature** is that even if the user reloads the web app or even close the tab and open it again, the notes made would be **stored** and **not get deleted**. 
+<br>
 
-### New Things Implemented / Learnt 
+## Demo
+
+
+https://user-images.githubusercontent.com/91744743/145716341-7003aecc-b80c-4836-afff-ac158bf3a8b7.mp4
+
+## New Things Implemented / Learnt 
 - Manipulating the HTML elements using the **innerHTML property of HTML DOM.**
 - Using **JSON** to make the object that can be used in the program using JSON.parse and also converting the objects into JSON string using the JSON.stringify property
 - To make the web app more useful it was important to find a way to **save the content** for future use so the localStorage property allows to save the content even if the brower window is closed.
